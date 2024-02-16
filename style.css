@@ -1,6 +1,29 @@
 @import url('https://fonts.googleapis.com/css2?family=Acme&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Play&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Maven+Pro:wght@500&display=swap');
+/* Styles par défaut pour les grands écrans */
+/* ... */
+
+/* Styles pour les écrans de taille moyenne (tablette, etc.) */
+@media (max-width: 768px) {
+   /* Ajoutez des styles spécifiques pour les tailles d'écran inférieures à 768 pixels */
+   /* Par exemple, ajustez la taille des polices, l'espacement, etc. */
+}
+
+/* Styles pour les petits écrans (téléphone) */
+@media (max-width: 576px) {
+   /* Ajoutez des styles spécifiques pour les tailles d'écran inférieures à 576 pixels */
+   /* Par exemple, modifiez la mise en page pour s'adapter à des écrans plus petits */
+}
+
+/* style.css */
+
+/* Ajoutez cette classe pour définir la taille maximale des images dans les cartes */
+.card-image {
+   max-width: 100%;
+   max-height: 100%;
+   object-fit: cover; /* Cette propriété garantit que l'image reste dans la boîte tout en conservant ses proportions */
+}
 
 body {
     margin: 0;
