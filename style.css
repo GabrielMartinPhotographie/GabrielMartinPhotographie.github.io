@@ -64,7 +64,7 @@ body {
  
  button{
      color: cornsilk;
-     background-color: #c72c41;
+     background-color: #07b14b;
      text-decoration: none;
      border: none;
      
@@ -78,7 +78,7 @@ body {
  }
  button:hover{
      opacity: 0.9;
-     background-color: #ff0000;
+     background-color: #046b2d;
      transition: 0.4s;
      
  }
