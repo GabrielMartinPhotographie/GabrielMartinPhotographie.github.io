@@ -28,41 +28,29 @@
     </div>
 
     <script>
-        // Fonction pour générer dynamiquement la galerie
-        function generateGallery() {
-            const folderPath = '../Portfolio/';
-            const galleryContainer = document.getElementById('dynamicGallery');
-
-            // Utilisation de l'API Fetch pour récupérer la liste des fichiers dans le dossier
-            fetch(folderPath)
-                .then(response => response.text())
-                .then(data => {
-                    // Utilisation de DOMParser pour parcourir le HTML généré par le serveur
-                    const parser = new DOMParser();
-                    const htmlDocument = parser.parseFromString(data, 'text/html');
-
-                    // Sélectionner toutes les balises img dans le document HTML généré
-                    const imageElements = htmlDocument.querySelectorAll('img');
-
-                    // Créer dynamiquement les éléments de la galerie
-                    imageElements.forEach(img => {
-                        const galleryItem = document.createElement('div');
-                        galleryItem.classList.add('gallery-item');
-
-                        const galleryImage = document.createElement('img');
-                        galleryImage.classList.add('gallery-image');
-                        galleryImage.src = folderPath + img.getAttribute('src');
-                        galleryImage.alt = 'wedding bride';
-
-                        galleryItem.appendChild(galleryImage);
-                        galleryContainer.appendChild(galleryItem);
-                    });
-                })
-                .catch(error => console.error('Erreur lors de la récupération des fichiers:', error));
+        async function loadImages() {
+          // Sélectionnez un dossier (l'utilisateur sera invité à choisir un dossier)
+          const folderHandle = await window.showDirectoryPicker();
+    
+          // Obtenez la liste des fichiers dans le dossier
+          const files = [];
+          for await (const fileHandle of folderHandle.values()) {
+            files.push(fileHandle);
+          }
+    
+          // Chargement des images dans la page
+          const galleryContainer = document.body;
+          files.forEach(async (fileHandle) => {
+            const file = await fileHandle.getFile();
+            const imgElement = document.createElement('img');
+            imgElement.src = URL.createObjectURL(file);
+            imgElement.alt = file.name;
+            galleryContainer.appendChild(imgElement);
+          });
         }
-
-        // Appel de la fonction pour générer la galerie au chargement de la page
-        window.onload = generateGallery;
-    </script>
-</body>
-</html>
+    
+        // Appel de la fonction pour charger les images lors du chargement de la page
+        loadImages();
+      </script>
+    </body>
+    </html>
