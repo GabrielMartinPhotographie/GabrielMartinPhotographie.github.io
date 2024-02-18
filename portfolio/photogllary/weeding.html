@@ -11,7 +11,7 @@
     <link rel="icon" type="image/png" sizes="32x32" href="../../favicon/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="../../favicon/favicon-16x16.png">
     <link rel="manifest" href="/site.webmanifest">
-    <script src="lightbox.js"></script> <!-- Remplacez 'lightbox.js' par le nom réel de votre fichier JavaScript -->
+    <script src="lightbox.js"></script>
 </head>
 <body>
     <div class="container">
@@ -20,7 +20,7 @@
 
         <div id="lightbox" class="lightbox">
             <span class="close-btn" onclick="closeLightbox()">&times;</span>
-            <img id="lightbox-img" class="lightbox-content">
+            <img id="lightbox-img" class="lightbox-content" onclick="closeLightbox()">
         </div>
     
         <hr>
@@ -116,46 +116,45 @@
     </div>
 
     <div style="text-align: center;">
-        <h1><a style=" text-decoration: none; cursor: pointer; color: #0f6329" href="../portfolio.html"><i class="fas fa-backward"></i> Back to Portfolio</a></h1>
+        <h1><a style="text-decoration: none; cursor: pointer; color: #0f6329" href="../portfolio.html"><i class="fas fa-backward"></i> Back to Portfolio</a></h1>
     </div>
 
     <script>
         function openLightboxWithWatermark(imgSrc) {
             var lightbox = document.getElementById('lightbox');
             var lightboxImg = document.getElementById('lightbox-img');
-    
+
             // Ajoutez le filigrane au SRC de l'image
-            var watermark = "Your Watermark Text";
+            var watermark = "Watermark Text";
             lightboxImg.src = addWatermark(imgSrc, watermark);
-    
+
             lightbox.style.display = 'flex';
         }
-    
+
         function addWatermark(imgSrc, watermark) {
-            // Créez un élément de canevas pour ajouter le filigrane
             var canvas = document.createElement('canvas');
             var context = canvas.getContext('2d');
-    
-            // Créez une nouvelle image pour éviter de modifier l'image source directement
+            
             var img = new Image();
             img.src = imgSrc;
-    
-            // Définissez la taille du canevas sur celle de l'image
+            
             canvas.width = img.width;
             canvas.height = img.height;
-    
-            // Dessinez l'image sur le canevas
+            
             context.drawImage(img, 0, 0);
-    
-            // Appliquez le filigrane
+
             context.font = '20px Arial';
             context.fillStyle = 'rgba(255, 255, 255, 0.5)';
             context.fillText(watermark, canvas.width - 200, canvas.height - 20);
-    
-            // Convertissez le canevas en une nouvelle image avec le filigrane
+
             var watermarkedImgSrc = canvas.toDataURL('image/jpeg');
-    
+
             return watermarkedImgSrc;
+        }
+
+        function closeLightbox() {
+            var lightbox = document.getElementById('lightbox');
+            lightbox.style.display = 'none';
         }
     </script>
 </body>
