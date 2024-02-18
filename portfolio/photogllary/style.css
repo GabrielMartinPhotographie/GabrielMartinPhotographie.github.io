@@ -4,6 +4,34 @@
 
 /* Ajoutez ces styles dans votre fichier style.css ou dans la balise <style> de votre HTML */
 
+.card-image-watermarked {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: cover; /* Cette propriété garantit que l'image reste dans la boîte tout en conservant ses proportions */
+    position: relative;
+}
+
+/* Ajoutez le filigrane à l'image avec positionnement absolu */
+.watermark {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    color: rgba(255, 255, 255, 0.5); /* Couleur du filigrane avec opacité */
+    font-size: 14px;
+    font-family: Arial, sans-serif;
+    pointer-events: none; /* Empêcher le filigrane d'interférer avec les clics */
+}
+
+/* Désactivez le clic droit pour empêcher le téléchargement */
+body {
+    user-select: none;
+}
+
+/* Désactivez également le clic droit sur les images pour certains navigateurs */
+img {
+    pointer-events: none;
+}
+
 .lightbox {
     display: none;
     position: fixed;
