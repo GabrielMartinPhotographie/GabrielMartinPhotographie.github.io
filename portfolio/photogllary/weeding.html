@@ -21,14 +21,8 @@
         <img class="center" src="../illustrator/helmet.gif" alt="">
         <h1 class="heading"> Photographies de <span>Gabriel MARTIN</span></h1>
 
-        <div id="lightbox" class="lightbox">
-            <span class="close-btn" onclick="closeLightbox()">&times;</span>
-            <img id="lightbox-img" class="lightbox-content" onclick="closeLightbox()">
-        </div>
-
         <hr>
         <div class="gallery">
-
             <!-- Première rangée -->
             <div class="gallery-item" onclick="openLightbox('../photogllary/Portfolio/787B.jpg')">
                 <img class="gallery-image" src="../photogllary/Portfolio/787B.jpg"
@@ -122,6 +116,12 @@
         <hr style="margin-top:2rem;">
     </div>
 
+    <!-- Lightbox -->
+    <div id="lightbox" class="lightbox">
+        <span class="close-btn" onclick="closeLightbox()">&times;</span>
+        <img id="lightbox-img" class="lightbox-content" onclick="closeLightbox()">
+    </div>
+
     <div style="text-align: center;">
         <h1><a style="text-decoration: none; cursor: pointer; color: #0f6329" href="../portfolio.html"><i
                     class="fas fa-backward"></i> Back to Portfolio</a></h1>
@@ -142,13 +142,11 @@
                 var lightboxImg = document.getElementById('lightbox-img');
                 lightboxImg.src = imgSrc;
                 lightbox.style.display = 'flex';
-                lightbox.style.backgroundColor = 'transparent'; // Fond transparent
             }
 
             function closeLightbox() {
                 var lightbox = document.getElementById('lightbox');
                 lightbox.style.display = 'none';
-                lightbox.style.backgroundColor = 'rgba(0, 0, 0, 0.9)'; // Fond d'origine
             }
         });
     </script>

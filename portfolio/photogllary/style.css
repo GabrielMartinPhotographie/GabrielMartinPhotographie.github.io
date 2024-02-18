@@ -1,63 +1,70 @@
 @import url(https://fonts.googleapis.com/css?family=Montserrat:500);
 
-/* Ajoutez ces styles dans votre fichier style.css ou dans la balise <style> de votre HTML */
-
-.card-image-watermarked {
-    max-width: 100%;
-    max-height: 100%;
-    object-fit: cover; /* Cette propriété garantit que l'image reste dans la boîte tout en conservant ses proportions */
-    position: relative;
-}
-
-/* Ajoutez le filigrane à l'image avec positionnement absolu */
-.watermark {
-    position: absolute;
-    bottom: 10px;
-    right: 10px;
-    color: rgba(255, 255, 255, 0.5); /* Couleur du filigrane avec opacité */
-    font-size: 14px;
-    font-family: Arial, sans-serif;
-    pointer-events: none; /* Empêcher le filigrane d'interférer avec les clics */
-}
-
-/* Désactivez le clic droit pour empêcher le téléchargement */
 body {
-    user-select: none;
+    margin: 0;
+    font-family: 'Arial', sans-serif;
 }
 
-/* Désactivez également le clic droit sur les images pour certains navigateurs */
-img {
-    pointer-events: none;
+.container {
+    text-align: center;
+    margin: 20px;
+}
+
+.center {
+    display: block;
+    margin: 0 auto;
+}
+
+.heading {
+    color: #0f6329;
+}
+
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.gallery-item {
+    margin: 10px;
+    cursor: pointer;
+}
+
+.gallery-image {
+    max-width: 100%;
+    height: auto;
+    border: 2px solid #0f6329;
+    border-radius: 5px;
 }
 
 .lightbox {
     display: none;
     position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: rgba(0, 0, 0, 0.9);
-    z-index: 2;
     justify-content: center;
     align-items: center;
-    overflow: hidden;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    z-index: 1;
 }
 
 .lightbox-content {
-    display: block;
-    max-width: 80%;
-    max-height: 80%;
-    object-fit: contain; /* Ajustez selon votre préférence */
+    max-width: 90%;
+    max-height: 90%;
+    border: 2px solid #0f6329;
+    border-radius: 5px;
 }
 
 .close-btn {
     position: absolute;
-    top: 10px;
-    right: 10px;
+    top: 15px;
+    right: 15px;
     font-size: 30px;
-    color: #fff;
+    color: white;
     cursor: pointer;
-    z-index: 3;
 }
 
 /* style.css */
