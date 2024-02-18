@@ -126,30 +126,42 @@
         <h1><a style="text-decoration: none; cursor: pointer; color: #0f6329" href="../portfolio.html"><i
                     class="fas fa-backward"></i> Back to Portfolio</a></h1>
     </div>
-</body>
-<script>
-    document.addEventListener("DOMContentLoaded", function () {
-        var galleryItems = document.querySelectorAll(".gallery-image");
+    <div id="lightbox" class="lightbox">
+        <span class="close-btn" onclick="closeLightbox()">&times;</span>
+        <img id="lightbox-img" class="lightbox-content" onclick="closeLightbox()">
+    </div>
 
-        galleryItems.forEach(function (item) {
-            item.addEventListener("click", function () {
-                openLightbox(item.src);
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            var galleryItems = document.querySelectorAll(".gallery-image");
+            var lightbox = document.getElementById('lightbox');
+
+            galleryItems.forEach(function (item) {
+                item.addEventListener("click", function () {
+                    openLightbox(item.src);
+                });
             });
+
+            function openLightbox(imgSrc) {
+                var lightboxImg = document.getElementById('lightbox-img');
+                lightboxImg.src = imgSrc;
+                lightbox.style.display = 'flex';
+                lightbox.style.backgroundColor = 'transparent'; // Ajout de cette ligne
+            }
+
+            function closeLightbox() {
+                var lightbox = document.getElementById('lightbox');
+                lightbox.style.display = 'none';
+                lightbox.style.backgroundColor = 'rgba(0, 0, 0, 0.9)'; // Ajout de cette ligne
+            }
         });
-    });
+    </script>
+</div>
 
-    function openLightbox(imgSrc) {
-        var lightbox = document.getElementById('lightbox');
-        var lightboxImg = document.getElementById('lightbox-img');
-
-        lightboxImg.src = imgSrc;
-        lightbox.style.display = 'flex';
-    }
-
-    function closeLightbox() {
-        var lightbox = document.getElementById('lightbox');
-        lightbox.style.display = 'none';
-    }
-</script>
+<div style="text-align: center;">
+    <h1><a style="text-decoration: none; cursor: pointer; color: #0f6329" href="../portfolio.html"><i
+                class="fas fa-backward"></i> Back to Portfolio</a></h1>
+</div>
 </body>
+
 </html>
