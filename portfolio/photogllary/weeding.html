@@ -24,41 +24,18 @@
             // Parcourez toutes les images et ajoutez l'événement onclick
             galleryItems.forEach(function (item) {
                 item.addEventListener("click", function () {
-                    openLightboxWithWatermark(item.src);
+                    openLightbox(item.src);
                 });
             });
         });
 
-        function openLightboxWithWatermark(imgSrc) {
+        function openLightbox(imgSrc) {
             var lightbox = document.getElementById('lightbox');
             var lightboxImg = document.getElementById('lightbox-img');
 
-            // Ajoutez le filigrane au SRC de l'image
-            var watermark = "Watermark Text";
-            lightboxImg.src = addWatermark(imgSrc, watermark);
+            lightboxImg.src = imgSrc;
 
             lightbox.style.display = 'flex';
-        }
-
-        function addWatermark(imgSrc, watermark) {
-            var canvas = document.createElement('canvas');
-            var context = canvas.getContext('2d');
-
-            var img = new Image();
-            img.src = imgSrc;
-
-            canvas.width = img.width;
-            canvas.height = img.height;
-
-            context.drawImage(img, 0, 0);
-
-            context.font = '20px Arial';
-            context.fillStyle = 'rgba(255, 255, 255, 0.5)';
-            context.fillText(watermark, canvas.width - 200, canvas.height - 20);
-
-            var watermarkedImgSrc = canvas.toDataURL('image/jpeg');
-
-            return watermarkedImgSrc;
         }
 
         function closeLightbox() {
@@ -82,87 +59,89 @@
         <div class="gallery">
 
             <!-- Première rangée -->
-            <div class="gallery-item" onclick="openLightboxWithWatermark('../photogllary/Portfolio/787B.jpg')">
-                <img class="gallery-image"
-                    src="../photogllary/Portfolio/787B.jpg"
+            <div class="gallery-item" onclick="openLightbox('../photogllary/Portfolio/787B.jpg')">
+                <img class="gallery-image" src="../photogllary/Portfolio/787B.jpg"
                     alt="Plus belle photo prise : Yojiro Terrada appuyé sur la MAZDA 787B">
             </div>
 
-            <div class="gallery-item" onclick="openLightboxWithWatermark('../photogllary/Portfolio/9x8_nuit.jpg')">
+            <div class="gallery-item" onclick="openLightbox('../photogllary/Portfolio/9x8_nuit.jpg')">
                 <img class="gallery-image" src="../photogllary/Portfolio/9x8_nuit.jpg" alt="Peugeot 9X8 au Mans">
             </div>
 
-            <div class="gallery-item" onclick="openLightboxWithWatermark('../photogllary/Portfolio/9x8.jpg')">
-                <img class="gallery-image" src="../photogllary/Portfolio/9x8.jpg" alt="Sortie pour la pesée de la Peugeot 9X8">
+            <div class="gallery-item" onclick="openLightbox('../photogllary/Portfolio/9x8.jpg')">
+                <img class="gallery-image" src="../photogllary/Portfolio/9x8.jpg"
+                    alt="Sortie pour la pesée de la Peugeot 9X8">
             </div>
 
             <!-- Deuxième rangée -->
-            <div class="gallery-item" onclick="openLightboxWithWatermark('../photogllary/Portfolio/288_nuit.jpg')">
+            <div class="gallery-item" onclick="openLightbox('../photogllary/Portfolio/288_nuit.jpg')">
                 <img class="gallery-image" src="../photogllary/Portfolio/288_nuit.jpg" alt="Ferrari 488 GTE">
             </div>
 
-            <div class="gallery-item" onclick="openLightboxWithWatermark('../photogllary/Portfolio/AMR_nuit.jpg')">
-                <img class="gallery-image" src="../photogllary/Portfolio/AMR_nuit.jpg" alt="Aston Martin Vantage GTE">
+            <div class="gallery-item" onclick="openLightbox('../photogllary/Portfolio/AMR_nuit.jpg')">
+                <img class="gallery-image" src="../photogllary/Portfolio/AMR_nuit.jpg"
+                    alt="Aston Martin Vantage GTE">
             </div>
 
-            <div class="gallery-item" onclick="openLightboxWithWatermark('../photogllary/Portfolio/488_nuit_2.jpg')">
+            <div class="gallery-item" onclick="openLightbox('../photogllary/Portfolio/488_nuit_2.jpg')">
                 <img class="gallery-image" src="../photogllary/Portfolio/488_nuit_2.jpg" alt="Ferrari 488 GTE de nuit">
             </div>
 
             <!-- Troisième rangée -->
-            <div class="gallery-item" onclick="openLightboxWithWatermark('../photogllary/Portfolio/488.jpg')">
+            <div class="gallery-item" onclick="openLightbox('../photogllary/Portfolio/488.jpg')">
                 <img class="gallery-image" src="../photogllary/Portfolio/488.jpg" alt="Ferrari 488 GTE">
             </div>
 
-            <div class="gallery-item" onclick="openLightboxWithWatermark('../photogllary/Portfolio/Alpine.jpg')">
+            <div class="gallery-item" onclick="openLightbox('../photogllary/Portfolio/Alpine.jpg')">
                 <img class="gallery-image" src="../photogllary/Portfolio/Alpine.jpg" alt="Alpine V6 course de côte">
             </div>
 
-            <div class="gallery-item" onclick="openLightboxWithWatermark('../photogllary/Portfolio/Alpine (2).jpg')">
+            <div class="gallery-item" onclick="openLightbox('../photogllary/Portfolio/Alpine (2).jpg')">
                 <img class="gallery-image" src="../photogllary/Portfolio/Alpine (2).jpg" alt="Alpine V6 course de côte">
             </div>
 
             <!-- Quatrième rangée -->
-            <div class="gallery-item" onclick="openLightboxWithWatermark('../photogllary/Portfolio/AMG.jpg')">
+            <div class="gallery-item" onclick="openLightbox('../photogllary/Portfolio/AMG.jpg')">
                 <img class="gallery-image" src="../photogllary/Portfolio/AMG.jpg" alt="Mercedez-AMG GTR">
             </div>
 
-            <div class="gallery-item" onclick="openLightboxWithWatermark('../photogllary/Portfolio/AMR_nuit.jpg')">
+            <div class="gallery-item" onclick="openLightbox('../photogllary/Portfolio/AMR_nuit.jpg')">
                 <img class="gallery-image" src="../photogllary/Portfolio/AMR_nuit.jpg" alt="Aston Martin Vantage de nuit">
             </div>
 
-            <div class="gallery-item" onclick="openLightboxWithWatermark('../photogllary/Portfolio/Apollo (1).jpg')">
+            <div class="gallery-item" onclick="openLightbox('../photogllary/Portfolio/Apollo (1).jpg')">
                 <img class="gallery-image" src="../photogllary/Portfolio/Apollo (1).jpg" alt="Apollo Intenza Emotione">
             </div>
 
             <!-- Cinquième rangée -->
-            <div class="gallery-item" onclick="openLightboxWithWatermark('../photogllary/Portfolio/Apollo (2).jpg')">
+            <div class="gallery-item" onclick="openLightbox('../photogllary/Portfolio/Apollo (2).jpg')">
                 <img class="gallery-image" src="../photogllary/Portfolio/Apollo (2).jpg" alt="Apollo Intenza Emotione">
             </div>
 
-            <div class="gallery-item" onclick="openLightboxWithWatermark('../photogllary/Portfolio/Aston_Martin.jpg')">
+            <div class="gallery-item" onclick="openLightbox('../photogllary/Portfolio/Aston_Martin.jpg')">
                 <img class="gallery-image" src="../photogllary/Portfolio/Aston_Martin.jpg" alt="Aston Martin en showroom">
             </div>
 
-            <div class="gallery-item" onclick="openLightboxWithWatermark('../photogllary/Portfolio/Bentley_speed9.jpg')">
-                <img class="gallery-image" src="../photogllary/Portfolio/Bentley_speed9.jpg" alt="Légende du Mans, Bentley Speed 8">
+            <div class="gallery-item" onclick="openLightbox('../photogllary/Portfolio/Bentley_speed9.jpg')">
+                <img class="gallery-image" src="../photogllary/Portfolio/Bentley_speed9.jpg"
+                    alt="Légende du Mans, Bentley Speed 8">
             </div>
 
             <!-- Sixième rangée -->
-            <div class="gallery-item" onclick="openLightboxWithWatermark('../photogllary/Portfolio/bentley (1).jpg')">
+            <div class="gallery-item" onclick="openLightbox('../photogllary/Portfolio/bentley (1).jpg')">
                 <img class="gallery-image" src="../photogllary/Portfolio/bentley (1).jpg" alt="Showroom Bentley">
             </div>
 
-            <div class="gallery-item" onclick="openLightboxWithWatermark('../photogllary/Portfolio/bentley (2).jpg')">
+            <div class="gallery-item" onclick="openLightbox('../photogllary/Portfolio/bentley (2).jpg')">
                 <img class="gallery-image" src="../photogllary/Portfolio/bentley (2).jpg" alt="Showroom Bentley">
             </div>
 
-            <div class="gallery-item" onclick="openLightboxWithWatermark('../photogllary/Portfolio/Casque.jpg')">
+            <div class="gallery-item" onclick="openLightbox('../photogllary/Portfolio/Casque.jpg')">
                 <img class="gallery-image" src="../photogllary/Portfolio/Casque.jpg" alt="Pilote sur Norma MC20">
             </div>
 
             <!-- Septième rangée -->
-            <div class="gallery-item" onclick="openLightboxWithWatermark('../photogllary/Portfolio/Casque2.jpg')">
+            <div class="gallery-item" onclick="openLightbox('../photogllary/Portfolio/Casque2.jpg')">
                 <img class="gallery-image" src="../photogllary/Portfolio/Casque2.jpg" alt="Course de côte sur Norma MC20">
             </div>
 

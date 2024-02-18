@@ -1,5 +1,3 @@
-
-
 @import url(https://fonts.googleapis.com/css?family=Montserrat:500);
 
 /* Ajoutez ces styles dans votre fichier style.css ou dans la balise <style> de votre HTML */
@@ -34,7 +32,7 @@ img {
 
 .lightbox {
     display: none;
-    position: absolute;
+    position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -45,19 +43,11 @@ img {
     overflow: hidden;
 }
 
-.lightbox.initial {
-    display: none;
-}
-
 .lightbox-content {
-    margin: auto;
     display: block;
     max-width: 80%;
     max-height: 80%;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    object-fit: contain; /* Ajustez selon votre préférence */
 }
 
 .close-btn {
@@ -79,62 +69,62 @@ img {
     object-fit: cover; /* Cette propriété garantit que l'image reste dans la boîte tout en conservant ses proportions */
 }
 
-
 /* Styles par défaut pour les grands écrans */
 /* ... */
 
 /* Styles pour les écrans de taille moyenne (tablette, etc.) */
 @media (max-width: 768px) {
-	/* Ajoutez des styles spécifiques pour les tailles d'écran inférieures à 768 pixels */
-	/* Par exemple, ajustez la taille des polices, l'espacement, etc. */
- }
- 
- /* Styles pour les petits écrans (téléphone) */
- @media (max-width: 576px) {
-	/* Ajoutez des styles spécifiques pour les tailles d'écran inférieures à 576 pixels */
-	/* Par exemple, modifiez la mise en page pour s'adapter à des écrans plus petits */
- }
+    /* Ajoutez des styles spécifiques pour les tailles d'écran inférieures à 768 pixels */
+    /* Par exemple, ajustez la taille des polices, l'espacement, etc. */
+}
+
+/* Styles pour les petits écrans (téléphone) */
+@media (max-width: 576px) {
+    /* Ajoutez des styles spécifiques pour les tailles d'écran inférieures à 576 pixels */
+    /* Par exemple, modifiez la mise en page pour s'adapter à des écrans plus petits */
+}
 
 :root {
-	/* Base font size */
-	font-size: 10px;
+    /* Base font size */
+    font-size: 10px;
 }
 
 *,
 *::before,
 *::after {
-	box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 body {
-	min-height: 100vh;
-	background-color: #fafafa;
+    min-height: 100vh;
+    background-color: #fafafa;
 }
 
 .container {
-	max-width: 100rem;
-	margin: 0 auto;
-	padding: 0 2rem 2rem;
+    max-width: 100rem;
+    margin: 0 auto;
+    padding: 0 2rem 2rem;
 }
 
 .heading {
-	font-family: "Montserrat", Arial, sans-serif;
-	font-size: 4rem;
-	font-weight: 500;
-	line-height: 1.5;
-	text-align: center;
-	padding: 3.5rem 0;
-	color: #1a1a1a;
+    font-family: "Montserrat", Arial, sans-serif;
+    font-size: 4rem;
+    font-weight: 500;
+    line-height: 1.5;
+    text-align: center;
+    padding: 3.5rem 0;
+    color: #1a1a1a;
 }
+
 @media only screen and (max-width: 600px) {
-	.heading {
-	  font-size: 2rem;
-	  padding: 2rem 0;
-	}
-  }
+    .heading {
+        font-size: 2rem;
+        padding: 2rem 0;
+    }
+}
 
 .heading span {
-	display: block;
+    display: block;
 }
 
 .gallery {
@@ -159,34 +149,26 @@ body {
     transition: transform 0.2s;
     object-fit: contain; /* Ajustez selon votre préférence */
 }
+
 .gallery-image:hover {
-	transform: scale(1.15);
+    transform: scale(1.15);
 }
 
-/*
-
-The following rule will only run if your browser supports CSS grid.
-
-Remove or comment-out the code block below to see how the browser will fall-back to flexbox styling. 
-
-*/
-
+/* The following rule will only run if your browser supports CSS grid. Remove or comment-out the code block below to see how the browser will fall-back to flexbox styling. */
 @supports (display: grid) {
-	.gallery {
-		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(24rem, 1fr));
-		grid-gap: 2rem;
-	}
+    .gallery {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(24rem, 1fr));
+        grid-gap: 2rem;
+    }
 
-	.gallery,
-	.gallery-item {
-		margin: 0;
-	}
+    .gallery,
+    .gallery-item {
+        margin: 0;
+    }
 }
 
-
-
-hr{
+hr {
     overflow: visible; /* For IE */
     padding: 0;
     border: none;
@@ -194,6 +176,7 @@ hr{
     color: #333;
     text-align: center;
 }
+
 hr:after {
     content: "§";
     display: inline-block;
@@ -203,9 +186,10 @@ hr:after {
     padding: 0 0.25em;
     background: white;
 }
+
 .center {
-	display: block;
-	margin-left: auto;
-	margin-right: auto;
-	width: 15%;
-  }
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 15%;
+}
