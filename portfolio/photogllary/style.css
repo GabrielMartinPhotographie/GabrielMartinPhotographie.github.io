@@ -13,13 +13,16 @@
     overflow: auto;
     background-color: rgb(0, 0, 0);
     background-color: rgba(0, 0, 0, 0.9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .lightbox-content {
-    margin: auto;
     display: block;
     max-width: 80%;
     max-height: 80%;
+    object-fit: contain; /* Ajustez selon votre préférence */
 }
 
 .close-btn {
