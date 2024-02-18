@@ -1,12 +1,17 @@
 document.addEventListener("DOMContentLoaded", function () {
-  // Attendez que le DOM soit entièrement chargé
   var galleryItems = document.querySelectorAll(".gallery-image");
+  var lightbox = document.getElementById('lightbox');
 
-  // Parcourez toutes les images et ajoutez l'événement onclick
   galleryItems.forEach(function (item) {
-      item.addEventListener("click", function () {
-          openLightbox(item.src);
-      });
+    item.addEventListener("click", function () {
+      openLightbox(item.src);
+    });
+  });
+
+  document.addEventListener("keydown", function (event) {
+    if (event.key === "Escape") {
+      closeLightbox();
+    }
   });
 });
 
@@ -16,6 +21,13 @@ function openLightbox(imgSrc) {
 
   lightboxImg.src = imgSrc;
   lightbox.style.display = 'flex';
+
+  // Ajoutez un écouteur d'événements pour la touche "Échap" lorsqu'il est ouvert
+  document.addEventListener("keydown", function (event) {
+    if (event.key === "Escape") {
+      closeLightbox();
+    }
+  });
 }
 
 function closeLightbox() {
