@@ -1,14 +1,15 @@
 // lightbox.js
 
-function openLightbox(imgSrc) {
+function openLightboxWithWatermark(imgSrc) {
   var lightbox = document.getElementById('lightbox');
   var lightboxImg = document.getElementById('lightbox-img');
 
-  lightboxImg.src = imgSrc;
-  lightbox.style.display = 'flex';
-}
+  // Ajoutez le filigrane au SRC de l'image
+  var watermark = "Watermark Text";
+  lightboxImg.src = addWatermark(imgSrc, watermark);
 
-function closeLightbox() {
-  var lightbox = document.getElementById('lightbox');
-  lightbox.style.display = 'none';
+  // Ajoutez la classe pour appliquer les styles CSS
+  lightboxImg.classList.add('lightbox-content');
+
+  lightbox.style.display = 'flex';
 }

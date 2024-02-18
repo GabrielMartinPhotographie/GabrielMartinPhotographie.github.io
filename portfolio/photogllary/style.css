@@ -46,11 +46,16 @@ img {
     align-items: center;
 }
 
+
 .lightbox-content {
+    margin: auto;
     display: block;
     max-width: 80%;
     max-height: 80%;
-    object-fit: contain; /* Ajustez selon votre préférence */
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 .close-btn {
