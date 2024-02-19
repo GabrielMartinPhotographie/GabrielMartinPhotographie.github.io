@@ -4,21 +4,21 @@ document.addEventListener("DOMContentLoaded", function () {
   var lightboxImg = document.getElementById('lightbox-img');
   const images = [
 
-    "../Portfolio/9x8_nuit.jpg",
-    "../Portfolio/9x8.jpg",
-    "../Portfolio/288_nuit.jpg",
-    "../Portfolio/AMR_nuit.jpg",
-    "../Portfolio/488_nuit_2.jpg",
-    "../Portfolio/488.jpg",
-    "../Portfolio/Alpine.jpg",
-    "../Portfolio/Alpine (2).jpg",
-    "../Portfolio/AMG.jpg",
-    "../Portfolio/AMR_nuit.jpg",
-    "../Portfolio/Apollo (1).jpg",
-    "../Portfolio/Apollo (2).jpg",
-    "../Portfolio/Aston_Martin.jpg",
-    "../Portfolio/Bentley_speed9.jpg",
-    "../Portfolio/bentley (1).jpg",
+    "../photogllary/Portfolio/9x8_nuit.jpg",
+    "../photogllary/Portfolio/9x8.jpg",
+    "../photogllary/Portfolio/288_nuit.jpg",
+    "../photogllary/Portfolio/AMR_nuit.jpg",
+    "../photogllary/Portfolio/488_nuit_2.jpg",
+    "../photogllary/Portfolio/488.jpg",
+    "../photogllary/Portfolio/Alpine.jpg",
+    "../photogllary/Portfolio/Alpine (2).jpg",
+    "../photogllary/Portfolio/AMG.jpg",
+    "../photogllary/Portfolio/AMR_nuit.jpg",
+    "../photogllary/Portfolio/Apollo (1).jpg",
+    "../photogllary/Portfolio/Apollo (2).jpg",
+    "../photogllary/Portfolio/Aston_Martin.jpg",
+    "../photogllary/Portfolio/Bentley_speed9.jpg",
+    "../photogllary/Portfolio/bentley (1).jpg",
     "../photogllary/Portfolio/bentley (2).jpg",
     "../photogllary/Portfolio/Casque.jpg",
     "../photogllary/Portfolio/Casque2.jpg",
@@ -88,7 +88,7 @@ document.addEventListener("DOMContentLoaded", function () {
 ];
 
 var currentIndex = 0;
-var itemsPerPage = 20;
+var itemsPerPage = 12;
 var currentPage = 1;
 var totalPages = Math.ceil(images.length / itemsPerPage);
 
