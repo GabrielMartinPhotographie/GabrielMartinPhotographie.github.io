@@ -101,16 +101,16 @@ body {
 *::after {
     box-sizing: border-box;
 }
-
 body {
-    min-height: 100vh;
+    margin: 0;
+    font-family: 'Arial', sans-serif;
     background-color: #fafafa;
 }
 
 .container {
     max-width: 100rem;
     margin: 0 auto;
-    padding: 0 2rem 2rem;
+    padding: 0 0.5rem 0.5rem; /* Ajustez les marges selon vos préférences */
 }
 
 .heading {
@@ -119,16 +119,17 @@ body {
     font-weight: 500;
     line-height: 1.5;
     text-align: center;
-    padding: 3.5rem 0;
+    padding: 1.5rem 0; /* Ajustez la marge supérieure selon vos préférences */
     color: #1a1a1a;
 }
 
 @media only screen and (max-width: 600px) {
     .heading {
         font-size: 2rem;
-        padding: 2rem 0;
+        padding: 1rem 0; /* Ajustez la marge supérieure selon vos préférences */
     }
 }
+
 
 .heading span {
     display: block;
@@ -150,15 +151,35 @@ body {
 }
 
 .gallery-image {
+    position: relative; /* Ajout d'une position relative pour que la pseudo-classe soit positionnée par rapport à cet élément */
     width: 100%;
     height: auto;
     cursor: pointer;
     transition: transform 0.2s;
     object-fit: contain; /* Ajustez selon votre préférence */
+
+    /* Nouveau style pour le filigrane */
+    overflow: hidden;
 }
 
+.gallery-item {
+    position: relative;
+}
+
+.watermark {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1.5rem;
+    color: rgba(255, 255, 255, 0.5); /* Couleur et opacité du filigrane */
+    pointer-events: none; /* Permet aux clics de passer à travers le filigrane */
+}
+
+/* ... Autres styles restants ... */
+
 .gallery-image:hover {
-    transform: scale(1.15);
+    transform: scale(1.10);
 }
 
 /* The following rule will only run if your browser supports CSS grid. Remove or comment-out the code block below to see how the browser will fall-back to flexbox styling. */

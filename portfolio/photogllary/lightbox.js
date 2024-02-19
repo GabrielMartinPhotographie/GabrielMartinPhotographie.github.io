@@ -88,7 +88,7 @@ document.addEventListener("DOMContentLoaded", function () {
 ];
 
 var currentIndex = 0;
-var itemsPerPage = 9;
+var itemsPerPage = 24;
 var currentPage = 1;
 var totalPages = Math.ceil(images.length / itemsPerPage);
 
